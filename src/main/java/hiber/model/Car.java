@@ -1,6 +1,7 @@
 package hiber.model;
 
 import javax.persistence.*;
+import java.util.Random;
 
 @Entity
 @Table(name = "car")
@@ -24,10 +25,10 @@ public class Car {
     public Car() {
     }
 
-    public Car(String name, int series, User user) {
+    public Car(String name, User user) {
         this.name = name;
-        this.series = series;
         this.user = user;
+        this.series = new Random().nextInt();
     }
 
     public Long getId() {
